@@ -1,0 +1,53 @@
+1、店铺类别集合（shopTypeList）
+    1、_id
+    2、shopTypePic:店铺类别图片
+    3、shopTypeName:店铺类别名字
+    4、addTime:添加时间
+    5、upTime:更新时间
+2、广告集合（advList）
+    1、_id
+    2、advPic:广告图片
+    3、advHref:广告链接
+    4、addTime:添加时间
+    5、upTime:更新时间
+3、店铺集合（shopList）
+    1、_id
+    2、shopPic:店铺图片
+    3、shopName:店铺名称
+    4、isTop:是否推荐    是：放到首页，否，不放到首页。
+    5、shopTypeId:xxxxx 即是shopTypeList-->_id
+4、商品类别集合(goodsTypeList)：
+    1、_id
+    2、goodsTypeName:商品类别的名字
+    3、shopId:店铺ID
+5、商品集合：
+    1、_id
+    2、goodsName:商品名字
+    3、goodsPic:商品图片
+    4、goodsPrice:商品价格
+    5、goodsTop:是否为推荐
+    6、isHot:是否热销。
+    7、shopId:店铺ID
+    8、goodsTypeId:商品类别ID
+6、用户信息表（userList）
+7、短信集合信息（codeList）
+8、管理员的列表（adminList）
+    _id:xxxx
+    adminName:管理员的名字
+    passWord:密码   --》md5
+    loginTime:最后登陆的时间
+9、管理员的登陆日志 adminLoginLog
+    _id:xxxx
+    adminName:
+    logTime:
+
+*********************************
+1、项目名称：xxx
+2、技术点：vue+vuex+router+axios_elementui
+3、
+    1、用户设置及后台数据展示。
+    2、用户订单及购物支付功能。、
+    3、商品店铺之间的子功能模块。
+    4、活动推广数据展示系统。
+    6、系统商城功能开发。
+    7、完成领导安排的其它任务。

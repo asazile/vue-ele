@@ -1,0 +1,12 @@
+1、登陆：
+    方式：post
+    地址：http://127.0.0.1/login
+    传递的参数：json
+        adminName,
+        passWord,
+    返回的结果：
+        {
+            ok:1,
+            token:
+            msg:"xx"
+        }
