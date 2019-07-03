@@ -42,14 +42,14 @@ export default {
                 });
             })
         },
-        // deleteAdmin(state,id){
-        //     axios.delete("/deleteAdmin",{
-        //         data:{
-        //             id
-        //         }
-        //     }).then(data=>{
-        //         this._actions.adminLog[0]();
-        //     })
-        // },
+        deleteAdmin(state,id){
+            axios.delete("/deleteAdmin",{
+                data:{
+                    id
+                }
+            }).then(data=>{
+                this._actions.adminLog[0](state.rootState.pageIndex);
+            })
+        },
     }
 }

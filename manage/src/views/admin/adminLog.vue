@@ -25,7 +25,7 @@
           <el-button
             size="mini"
             type="danger"
-            @click="deleteAdmin(scope.row._id)"
+            @click="$store.dispatch('deleteAdmin',scope.row._id)"
           >删除</el-button>
         </template>
       </el-table-column>
@@ -49,24 +49,9 @@ export default {
   data() {
     return {};
   },
-  inject: ["reload"],
   mounted() {
     this.$store.dispatch("adminLog");
   },
-
-  methods: {
-    deleteAdmin(id) {
-      this.$axios.delete("/deleteAdmin", {
-          data: {
-            id
-          }
-        })
-        .then(data => {
-          this.reload();
-          // this._actions.adminLog[0]();
-        });
-    }
-  }
 };
 </script>
 <style scoped>

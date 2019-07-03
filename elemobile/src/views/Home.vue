@@ -11,7 +11,7 @@
                 <div class="banner-nomove">
                     <img src="@/assets/img/banner2.jpg" alt="" style="width: 100%;">
                 </div>
-                <cube-slide ref="slide" :data="items">
+                <cube-slide ref="slide" :data="items" :options="options">
                     <cube-slide-item v-for="(item, index) in items" :key="index"
                                      @click.native="">
                         <a :href="item.url" class="banner-a">
@@ -35,6 +35,9 @@
         data() {
             return {
                 shopList: [],
+                options:{
+                    eventPassthrough:'vertical'
+                },
                 items: [
                     {
                         url: 'http://www.didichuxing.com/',

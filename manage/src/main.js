@@ -29,6 +29,7 @@ axios.interceptors.request.use((config) => {
   return config
 });
 axios.interceptors.response.use(({ data }) => {
+  store.commit("CHANGE_PAGE_INDEX",data.pageIndex);
   store.commit("CHANGE_IS_LOADING", false);
   if(data.total && data.pageSize)
     store.commit("CHANGE_PAGE_INFO", { total: data.total, pageSize: data.pageSize });

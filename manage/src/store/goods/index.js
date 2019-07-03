@@ -29,14 +29,13 @@ const actions = {
             commit("CHANGE_GOODS_TYPE_LIST", data.goodsTypeList);
         })
     },
-    deleteGoodsType({dispatch}, id) {
+    deleteGoodsType({dispatch,rootState}, id) {
         axios.delete("/deleteGoodsType", {
             data: {
                 id
             }
         }).then(data => {
-            dispatch("getGoodsType");
-            //this._actions.getGoodsType[0]();
+            dispatch("getGoodsType",rootState.pageIndex);
         })
     },
     getAllGoodsType({commit}) {

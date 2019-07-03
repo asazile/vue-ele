@@ -12,7 +12,8 @@ export default new Vuex.Store({
         isLoading:false,
         adminName:localStorage.adminName,
         total:0,  //分页总条数
-        pageSize:5  //分页显示五条
+        pageSize:5,  //分页显示五条
+        pageIndex:1
     },
     mutations: {
           CHANGE_PAGE_INFO(state,{total,pageSize}){
@@ -29,6 +30,9 @@ export default new Vuex.Store({
         },
           CHANGE_IS_LOADING(state,loading){
               state.isLoading = loading;
+        },
+        CHANGE_PAGE_INDEX(state,pageIndex){
+            state.pageIndex = pageIndex;
         }
   },
     actions: {

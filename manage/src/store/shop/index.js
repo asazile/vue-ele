@@ -55,14 +55,13 @@ const actions = {
                 commit("CHANGE_SHOP_LIST",data.shopList)
             })
     },
-    deleteShop({dispatch}, id) {
+    deleteShop({dispatch,rootState}, id) {
         axios.delete("/deleteShop", {
             data: {
                 id
             }
         }).then(data => {
-            dispatch("getShop");
-            //this._actions.getShop[0]();
+            dispatch("getShop",rootState.pageIndex);
         })
     },
     searchShopType({commit},shopTypeNames){

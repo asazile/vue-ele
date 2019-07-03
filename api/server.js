@@ -62,6 +62,10 @@ app.get("/adminLog", function (req, res) {       //获取管理员登录日志�
             let pageIndex = (req.query.pageIndex || 1) / 1;
             const pageSize = 5;
             db.count("adminLoginLog", {}, function (err, total) {
+                var pageSum = Math.ceil(total/pageSize);
+                if(pageSum < 1) pageSum =1;
+                if(pageIndex > pageSum) pageIndex = pageSum;
+                if(pageIndex < 1 ) pageIndex =1;
                 db.find("adminLoginLog", {
                     skip: (pageIndex - 1) * pageSize,
                     limit: pageSize,
@@ -74,7 +78,8 @@ app.get("/adminLog", function (req, res) {       //获取管理员登录日志�
                         msg: "成功",
                         adminLog,
                         total,
-                        pageSize
+                        pageSize,
+                        pageIndex,
                     })
                 })
             })
